@@ -2,6 +2,7 @@ class Data {
 	int x;
 }
 
+// 참조형 매개변수 예제
 class PrimitiveParamEx {
 	public static void main(String[] args) {
 		Data d = new Data();
@@ -9,7 +10,7 @@ class PrimitiveParamEx {
 		System.out.println("main () : x = " + d.x);
 		
 		change(d);
-		System.out.println("After change(d.x)");
+		System.out.println("After change(d)");
 		System.out.println("main () : x = " + d.x);
 	}
 	
@@ -19,6 +20,7 @@ class PrimitiveParamEx {
 	}
 }
 
+//// 기본형 매개변수 예제
 //class PrimitiveParamEx {
 //	public static void main(String[] args) {
 //		Data d = new Data();

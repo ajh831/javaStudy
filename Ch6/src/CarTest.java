@@ -4,11 +4,11 @@ class Car{
 	String gearType;	// 변속기 종류 - auto(자동), manual(수동)
 	int door;	// 문의 개수
 	
-	Car() {	// 생성자
+	Car() {	// 기본 생성자
 		
 	}
 	
-	Car(String c, String g, int d) {
+	Car(String c, String g, int d) {	// 매개변수가 있는 생성자
 		color = c;
 		gearType = g;
 		door = d;
