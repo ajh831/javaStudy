@@ -24,6 +24,6 @@ public class InnerEx3 {
 //	외부 클래스의 지역변수는 final이 붙은 변수(상수)만 접근가능하다.
 			int liv3 = lv;	// 원래는 에러. (JDK1.8부터 에러 아님)
 			int liv4 = LV;	// OK
-		}
+		} 
 	}
 }

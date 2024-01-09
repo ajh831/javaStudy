@@ -36,10 +36,15 @@ class Time {
 	}
 
 	public void setHour(int hour) {
-		if (hour < 0 || hour > 23) {
+		if (isNotValidHour(hour)) {
 			return;
 		}
 		this.hour = hour;
+	}
+
+	// 매개변수로 넘겨진 hour가 유효한지 확인해서 알려주는 메서드(메서드 생성 단축키 alt+shift+m)
+	private boolean isNotValidHour(int hour) {
+		return hour < 0 || hour > 23;
 	}
 
 	public int getMinute() {

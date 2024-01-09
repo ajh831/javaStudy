@@ -4,10 +4,12 @@ public class CastingTest2 {
 		Car car = new Car();
 //		Car car = new FireEngine();
 		Car car2 = null;
-		FireEngine fe = null;
+		FireEngine fe = null;	// 실제 인스턴스가 무엇인지가 중요
 		
 		car.drive();
-		fe = (FireEngine)car;	// 에러.
+		fe = (FireEngine)car;	// 형변환 실행 에러. (컴파일은 됨)
+		fe.water();	// 컴파일 오케이(리모컨에 water가 있으니까) 하지만 실제 Car에는 water가 없음
+//					 실제 가르키는 객체가 뭔지가 중요함
 		fe.drive();
 		car2 = fe;
 		car2.drive();
