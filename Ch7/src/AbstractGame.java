@@ -51,6 +51,7 @@ class Dropship extends Unit {
 
 public class AbstractGame {
 	public static void main(String[] args) {
+//		Unit[] group = { new Marin(), new Tank(), new Marin(), new Dropship()};
 		Unit[] group = new Unit[4];
 //		Object[] group = new Object[4];	// 에러. Object클래스는 move 메서드 정의 XXX
 		group[0] = new Marin();
@@ -58,8 +59,9 @@ public class AbstractGame {
 		group[2] = new Marin();
 		group[3] = new Dropship();
 		
+//		group의 타입은 Unit[], group[0], group[1], group[2]의 타입은 Unit
 		for (int i = 0; i < group.length; i++) {
-			group[i].move(100, 200);	// 좌표 이동
+			group[i].move(100, 200);	// 좌표 이동(객체의 move(100, 200)을 호출
 		}
 	}
 }

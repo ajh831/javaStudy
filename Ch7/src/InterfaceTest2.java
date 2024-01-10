@@ -1,9 +1,11 @@
 class A2 {
+//	void autoPlay(B2 b) {
 	void autoPlay(I i) {
 		i.play();
 	}
 }
 
+// B클래스의 선언과 구현을 분리
 interface I {
 	public abstract void play();
 }
