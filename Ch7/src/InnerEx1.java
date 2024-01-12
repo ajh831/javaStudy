@@ -16,11 +16,14 @@ public class InnerEx1 {
               int iv = 300; 
 //            static int cv = 300;          // 에러! static변수를 선언할 수 없음 
               final static int CONST = 300; // final static은 상수이므로 허용
-        } 
+        }
+        
+        int i = LocalInner.CONST; // OK
   } 
 
   public static void main(String args[]) { 
         System.out.println(InstanceInner.CONST); 
-        System.out.println(StaticInner.cv); 
+        System.out.println(StaticInner.cv);
+//        System.out.println(LocalInner.CONST); // 에러. 지역 내부 클래스는 메서드 내에서만 가능
   } 
 } 
