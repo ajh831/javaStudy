@@ -13,7 +13,7 @@ public class TryWithResourceEx {
 		try (CloseableResource cr = new CloseableResource()) {
 			cr.exceptionWork(true); // 예외발생 O
 		} catch (WorkException e) {
-			e.printStackTrace();
+			e.printStackTrace();	// 예외 또 발생
 		} catch (CloseException e) {
 			e.printStackTrace();
 		}

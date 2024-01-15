@@ -3,8 +3,9 @@ import java.io.File;
 public class ExceptionEx15 {
 	public static void main(String[] args) {
 		// command line에서 입력받은 값을 이름으로 갖는 파일을 생성
-		File f = createFile(args[0]);
-//		File f = createFile("");
+//		File f = createFile(args[0]);
+//		File f = createFile("test.txt");
+		File f = createFile("");
 		System.out.println(f.getName() + " 파일이 성공적으로 생성되었습니다.");
 	}
 

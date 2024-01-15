@@ -2,7 +2,7 @@
 public class NewExceptionTest {
 	public static void main(String[] args) {
 		try {
-			startInstall();	// 프로그램 설치에 필요한 준비를 함
+			startInstall();	// 프로그램 설치에 필요한 준비를 함 -> SpaceException 발
 			copyFiles();	// 파일들을 복사
 		} catch (SpaceException e) {
 			System.out.println("에러 메시지 : " + e.getMessage());

@@ -12,7 +12,7 @@ public class FinallyTest3 {
 //			throw new Exception("에러 발생");
 		} catch (Exception e) {
 			e.printStackTrace();
-		} finally {
+		} finally {	// return문이 존재하더라도 finally문 실행 후 return!!!
 			System.out.println("method1()의 finally블럭이 실행됨");
 		}
 	}
