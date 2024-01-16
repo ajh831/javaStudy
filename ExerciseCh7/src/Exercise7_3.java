@@ -1,12 +1,12 @@
-// 섯다카드 20장을 담는 SutdaCard2배열을 초기화.
+// 섯다카드 20장을 담는 SutdaCard3배열을 초기화.
 // 섯다카드 1~10까지의 숫자 적힌 카드가 1장씩 들어있음
 // 숫자가 1,3,8인 경우 둘 중의 한장은 광
 
-class SutdaDeck2 {
+class SutdaDeck3 {
 	final int CARD_NUM = 20;
-	SutdaCard2[] cards = new SutdaCard2[CARD_NUM];
+	SutdaCard3[] cards = new SutdaCard3[CARD_NUM];
 
-	SutdaDeck2() {
+	SutdaDeck3() {
 		int num = 0;
 		boolean[] boolArr = RandomKwang(CARD_NUM);
 		boolean bool = false;
@@ -18,7 +18,7 @@ class SutdaDeck2 {
 				bool = false;
 			}
 
-			cards[i] = new SutdaCard2(num, bool);
+			cards[i] = new SutdaCard3(num, bool);
 		}
 	}
 	
@@ -27,7 +27,7 @@ class SutdaDeck2 {
 	void shuffle() {
 		for (int i = 0; i < cards.length; i++) {
 			int shuff = (int) (Math.random() * CARD_NUM);
-			SutdaCard2 tmp = cards[0];
+			SutdaCard3 tmp = cards[0];
 			cards[0] = cards[shuff];
 			cards[shuff] = tmp;
 		}
@@ -36,7 +36,7 @@ class SutdaDeck2 {
 	// 메서드명 : pick
 	// 반환타입 SutdaCard
 	// 매개변수 : int index - 위치
-	SutdaCard2 pick(int index) {
+	SutdaCard3 pick(int index) {
 		
 		return cards[index];
 	}
@@ -44,7 +44,7 @@ class SutdaDeck2 {
 	// 메서드명 : pick
 	// 반환타입 SutdaCard
 	// 매개변수 : X
-	SutdaCard2 pick() {
+	SutdaCard3 pick() {
 		int index = (int) (Math.random() * CARD_NUM);
 		return cards[index];
 	}
@@ -83,15 +83,15 @@ class SutdaDeck2 {
 	}
 }
 
-class SutdaCard2 {
+class SutdaCard3 {
 	int num;
 	boolean isKwang;
 
-	SutdaCard2() {
+	SutdaCard3() {
 		this(1, true);
 	}
 
-	SutdaCard2(int num, boolean isKwang) {
+	SutdaCard3(int num, boolean isKwang) {
 		this.num = num;
 		this.isKwang = isKwang;
 	}
@@ -104,7 +104,7 @@ class SutdaCard2 {
 
 public class Exercise7_3 {
 	public static void main(String[] args) {
-		SutdaDeck2 deck = new SutdaDeck2();
+		SutdaDeck3 deck = new SutdaDeck3();
 		
 		for (int i = 0; i < deck.cards.length; i++) {
 			System.out.print(deck.cards[i] + ",");
