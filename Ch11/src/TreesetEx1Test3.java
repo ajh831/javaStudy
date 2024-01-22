@@ -27,9 +27,9 @@ class Test3 implements Comparable {
 	}
 	
 }
-// 1. 객체가 비교기준을 가지고 있던지 -> class Test impolements Comparable
+// 1. 객체가 비교기준을 가지고 있s던지 -> class Test impolements Comparable
 
-class TestComp implements Comparator{	// 비교기준
+class TestComp3 implements Comparator{	// 비교기준
 	@Override
 	public int compare(Object o1, Object o2) {
 //		return 0;	// 0으로하면 같은 객체라고 인식해서 main메서드에서 프린트할 때 1개만 나옴
