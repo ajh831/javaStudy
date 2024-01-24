@@ -124,7 +124,7 @@ class MyVectorModify {
 	}
 }
 
-public class MyVectorModifyTest {
+public class MyVectorTest2 {
 	Vector v = new Vector();
 	Vector v2 = new Vector(2);
 

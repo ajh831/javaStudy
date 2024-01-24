@@ -83,9 +83,17 @@ class MyVector {
 	public int indexOf(Object obj) {
 		this.cnt = size();
 		
-		for (int i = 0; i < cnt; i++) {
-			if (objArr[i].equals(obj)) {
-				return i;
+		if (obj != null) { // null이 아닐때
+			for (int i = 0; i < cnt; i++) {
+				if (objArr[i].equals(obj)) {
+					return i;
+				}
+			}
+		} else { // obj가 null인 경우
+			for (int i = 0; i < cnt; i++) {
+				if (objArr[i] == obj) {
+					return i;
+				}
 			}
 		}
 		
@@ -115,7 +123,7 @@ class MyVector {
 	}
 }
 
-public class MyVectorTest {
+public class MyVectorTest1 {
 	Vector v = new Vector();
 
 	MyVector myVec = new MyVector();

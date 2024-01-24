@@ -1,7 +1,5 @@
 import java.util.*;
 
-import javax.swing.Box;
-
 class Fruit { public String toString() { return "Fruit";}}
 class Apple extends Fruit { public String toString() { return "Apple";}}
 class Grape extends Fruit { public String toString() { return "Grape";}}
