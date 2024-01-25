@@ -87,13 +87,16 @@ class MyVectorModify {
 	// 3. 값이 없는 경우 -1 반환
 	public int indexOf(Object obj) {
 		for (int i = 0; i < this.size; i++) {
-			if (Objects.isNull(objArr[i])) {
-				return i;
+			if (obj == null) {
+				if (objArr[i] == obj) {
+					return i;
+				}
+			} else {
+				if (objArr[i].equals(obj)) {
+					return i;
+				}
 			}
 
-			if (objArr[i].equals(obj)) { // equals로 비교할것!!!!!!!!!!!
-				return i;
-			}
 		}
 		return -1;
 	}
