@@ -45,7 +45,7 @@ public class Ex12_3 {
 		FruitBox12_3<? extends Fruit12_3> aBox = new FruitBox12_3<Apple12_3>(); // 형변환 생략
 		
 		// FruitBox<? extends Fruit> -> FruitBox<Apple> 가능? OK
-		FruitBox12_3<Apple12_3> appleBox = (FruitBox12_3<Apple12_3>) aBox;	// OK. 경고 발생
+		FruitBox12_3<Apple12_3> appleBox = (FruitBox12_3<Apple12_3>) aBox;	 // OK. 경고 발생
 			// 와일드 카드로 타입이 지정되어 명확하지 않은 aBox를 명확한 타입으로 지정하려고 하기 때문에 형변환이 필요한 것
 		
 		FruitBox12_3<Fruit12_3> fruitBox = new FruitBox12_3<Fruit12_3>();
