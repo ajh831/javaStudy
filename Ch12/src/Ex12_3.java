@@ -38,8 +38,15 @@ public class Ex12_3 {
 		Box12_3 b2 = new Box12_3<String>();
 		b2.add(new Integer(100)); // 참조변수가 원시타입이므로 가능. Box12_3 b2에 대입된 타입이 없기 때문에 가능한 것
 		Box12_3<String> b3 = new Box12_3<String>();
-//		b3.add(new Integer(100)); // 에러.
+//		b3.add(new Integer(100)); // 에러. 
 		
+		FruitBox12_3<? extends Fruit12_3> fBox = (FruitBox12_3<? extends Fruit12_3>) new FruitBox12_3<Fruit12_3>();
+		// FruitBox<Apple> -> FruitBox<? extends Fruit> 가능? OK
+		FruitBox12_3<? extends Fruit12_3> aBox = new FruitBox12_3<Apple12_3>(); // 형변환 생략
+		
+		// FruitBox<? extends Fruit> -> FruitBox<Apple> 가능? OK
+		FruitBox12_3<Apple12_3> appleBox = (FruitBox12_3<Apple12_3>) aBox;	// OK. 경고 발생
+			// 와일드 카드로 타입이 지정되어 명확하지 않은 aBox를 명확한 타입으로 지정하려고 하기 때문에 형변환이 필요한 것
 		
 		FruitBox12_3<Fruit12_3> fruitBox = new FruitBox12_3<Fruit12_3>();
 		FruitBox12_3<Apple12_3> appletBox = new FruitBox12_3<Apple12_3>();
