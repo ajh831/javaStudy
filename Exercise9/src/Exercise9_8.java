@@ -13,16 +13,23 @@ public class Exercise9_8 {
 //		5보다 작으면 값을 빼주고
 //		5보다 크면 10의 자리를 1 증가
 		
-		double num = d * Math.pow(10, n+1);
-		if (num % 10 < 5) {
-			num -= (num % 10);
-		} else {
-			num = num + 10 - (num%10);
-		}
+//		// 내가 푼 것
+//		double num = d * Math.pow(10, n+1);
+//		if (num % 10 < 5) {
+//			num -= (num % 10);
+//		} else {
+//			num = num + 10 - (num%10);
+//		}
+//		
+//		num = num / Math.pow(10, n+1);
+//		
+//		return num;
 		
-		num = num / Math.pow(10, n+1);
+// -----------------------------------------------------------------------
 		
-		return num;
+		// 해설
+		return Math.round(d * Math.pow(10, n)) / Math.pow(10, n);
+		// Math.round : 소수점 첫 째 자리에서 반올림
 	}
 	
 	public static void main(String[] args) {

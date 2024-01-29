@@ -7,6 +7,9 @@ public class Exercise9_7 {
 		}
 		
 		return true;
+		
+		// 위의 코드들은 아래의 코드와 동일
+		// return src.indexOf(target) != -1;
 	}
 	
 	public static void main(String[] args) {

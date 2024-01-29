@@ -35,19 +35,25 @@ class SutdaCard {
 	}
 
 	public boolean equals(Object obj) {
-		boolean result = false;
-		String str = toString();
-		String objStr = String.valueOf(obj.toString());
-		
-		if (Objects.equals(str, objStr)) {
-			result = true;
-		}
-		
-//		if (str.equals(objStr)) {
+//		// 내가 푼 것
+//		boolean result = false;
+//		String str = toString();
+//		String objStr = String.valueOf(obj.toString());
+//		
+//		if (Objects.equals(str, objStr)) {
 //			result = true;
 //		}
+//		
+//		return result;
 		
-		return result;
+// -----------------------------------------------------------------------
+		// 해설
+		if(obj instanceof SutdaCard) {	// 매개변수가 Object 타입이므로 instanceof로 확인 후 형변환
+			SutdaCard c = (SutdaCard) obj;
+			return num == c.num && isKwang == c.isKwang;
+		}
+		return false;
+		
 	}
 
 	public String toString() {

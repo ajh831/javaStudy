@@ -16,35 +16,63 @@ public class Exercise9_6 {
 //		5. 4에서 생성한 char배열을 '0'으로 채움
 //		6. src에서 문자배열을 뽑아내서 4에서 생성한 배열에 복사
 //		7. 4에서 생성한 배열로 String을 생성해서 반환
-		
+
+		// 내가 푼 것
+//		if (src == null || src.length() == length) {
+//			return src;
+//		} else if(length <= 0) {
+//			return "";
+//		} else {
+//			char[] chr = new char[length];
+//			if (chr.length-src.length() > 0) {
+//				for (int i = 0; i < chr.length-src.length(); i++) {
+//					chr[i] = '0';
+//				}
+//				int idx=0;
+//				for (int i = src.length(); i < length; i++) {
+//					chr[i] = src.charAt(idx);
+//					idx++;
+//				}
+//			} else {
+//				for (int i =0; i< length; i++) {
+//					chr[i] = src.charAt(i);
+//				}
+//			}
+//			
+//			src = String.valueOf(chr);
+//			
+//			return src;
+//		}
+
+// -----------------------------------------------------------------------
+		// 해설
+		// 1.
 		if (src == null || src.length() == length) {
 			return src;
-		} else if(length <= 0) {
+			// 2.
+		} else if (length <= 0) {
 			return "";
-		} else {
-			char[] chr = new char[length];
-			if (chr.length-src.length() > 0) {
-				for (int i = 0; i < chr.length-src.length(); i++) {
-					chr[i] = '0';
-				}
-				int idx=0;
-				for (int i = src.length(); i < length; i++) {
-					chr[i] = src.charAt(idx);
-					idx++;
-				}
-			} else {
-				for (int i =0; i< length; i++) {
-					chr[i] = src.charAt(i);
-				}
-			}
-			
-			src = String.valueOf(chr);
-			
-			return src;
+			// 3.
+		} else if (src.length() > length) {
+			return src.substring(0, length);
+		}
+
+		// 4.
+		char[] chArr = new char[length];
+
+		// 5.
+		for (int i = 0; i < length; i++) {
+			chArr[i] = '0';
 		}
 		
+		// 6.
+		System.arraycopy(src.toCharArray(), 0, chArr, length-src.length(), src.length());
+		// arraycopy(복사, 복사 시작지점, 붙여넣기, 붙여넣을 시작지점, 복사할 길이);
+		
+		// 7.
+		return new String(chArr);
 	}
-	
+
 	public static void main(String[] args) {
 		String src = "12345";
 		System.out.println(fillZero(src, 10));

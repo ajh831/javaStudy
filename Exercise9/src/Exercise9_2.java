@@ -35,16 +35,25 @@ class Point3D {
 	}
 
 	public boolean equals(Object obj) {
-		boolean result = false;
-		// == 객체 주소 비교
-		// equals 객체의 값 비교
+//		// 내가 푼 것
+//		boolean result = false;
+//		// == 객체 주소 비교
+//		// equals 객체의 값 비교
+//		
+//		Point3D obj2 = (Point3D) obj;
+//		if (this.x == obj2.x && this.y == obj2.y && this.z == obj2.z) {
+//			result = true;
+//		}
+//		
+//		return result;
 		
-		Point3D obj2 = (Point3D) obj;
-		if (this.x == obj2.x && this.y == obj2.y && this.z == obj2.z) {
-			result = true;
+// -----------------------------------------------------------------------
+		// 해설
+		if(obj instanceof Point3D) {
+			Point3D p = (Point3D) obj;
+			return x == p.x && y == p.y && z==p.z;
 		}
-		
-		return result;
+		return false;
 	}
 
 

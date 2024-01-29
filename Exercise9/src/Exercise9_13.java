@@ -21,6 +21,7 @@ public class Exercise9_13 {
 			return 0;
 		}
 		
+		// 내가 푼 것
 		for (int i = 0; i < src.length()-key.length()+1; i=index) {
 			String str = src.substring(i, i+key.length());
 			if (str.equals(key)) {
@@ -32,5 +33,15 @@ public class Exercise9_13 {
 		}
 		
 		return count;
+		
+// -----------------------------------------------------------------------
+//		// 해설
+//		while((index = src.indexOf(key, pos)) != -1) {	// inndexOf(찾으려는 문자열, 문자열 시작 위치)
+//			count++;
+//			pos = index + key.length();
+//		}
+//		
+//		return count;
+		
 	}
 }

@@ -16,6 +16,8 @@ public class Exercise9_10 {
 //		(System.arraycopy() 사용)
 //	4. 2에서 생성한 char배열을 문자열로 만들어서 반환
 	public static String format(String str, int length, int alignment) {
+
+		// 내가 푼 거
 		char[] chr = new char[length];
 		if (str.length() > length) {
 			return str.substring(0, length);
@@ -39,6 +41,37 @@ public class Exercise9_10 {
 		}
 
 		return String.valueOf(chr);
+
+//		// 해설
+//		// 1.
+//		int diff = length - str.length();
+//		if (diff < 0)
+//			return str.substring(0, length);
+//
+//		// 2.
+//		char[] source = str.toCharArray();
+//		char[] result = new char[length];
+//
+//		for (int i = 0; i < result.length; i++) {
+//			result[i] = '_'; // 원래 문제는 공백이지만 시각적으로 확인하기 위하여 '_'로 변경하였음
+//		}
+//
+//		// 3.
+//		switch (alignment) {
+//		case 0:
+//		default:
+//			System.arraycopy(source, 0, result, 0, source.length);
+//			break;
+//		case 1:
+//			System.arraycopy(source, 0, result, diff / 2, source.length);
+//			break;
+//		case 2:
+//			System.arraycopy(source, 0, result, diff, source.length);
+//			break;
+//		}
+//		
+//		// 4.
+//		return new String(result);
 	}
 
 	public static void main(String[] args) {

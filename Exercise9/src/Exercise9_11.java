@@ -9,57 +9,45 @@
 
 import java.util.*;
 
-class Gogodan {
-	final int num1;
-	final int num2;
-
-	Gogodan() {
-		this(2, 9);
-	}
-
-	Gogodan(int num1, int num2) {
-		this.num1 = num1;
-		this.num2 = num2;
-		print(num1, num2);
-	}
-
-	public static boolean print(int num1, int num2) {
-		System.out.println("USAGE : GugudanTest 3 5");
-		if (!(num1 >= 2 && num1 <= 9 && num2 >= 2 && num2 <= 9)) {
-			System.out.println("단의 범위는 2와 9사이의 값이어야 합니다.");
-			return true;
-		} else {
-			String str = "";
-			for (int i = num1; i <= num2; i++) {
-				for (int j = 1; j < 10; j++) {
-					System.out.println(i + "*" + j + "=" + i * j);
-				}
-				System.out.println();
-			}
-			return false;
-		}
-	}
-}
-
-class Input {
-	Scanner sc = new Scanner(System.in);
-	String number1 = sc.nextLine();
-	int num1 = Integer.valueOf(number1);
-	String number2 = sc.nextLine();
-	int num2 = Integer.valueOf(number2);
-
-	Gogodan gogodan = new Gogodan(num1, num2);
-}
-
-
+// 해설
 public class Exercise9_11 {
 	public static void main(String[] args) {
-		while (true) {
-			System.out.println("시작 단과 끝 단, 두 개의 정수를 입력해주세요.");
-			while (true) {
-				Input i = new Input();
+		int from = 0;
+		int to = 0;
+
+		try {
+			if (args.length != 2) {
+				throw new Exception("시작 단과 끝 단, 두개의 점수를 입력해주세요.");
 			}
 
+			from = Integer.parseInt(args[0]);
+			to = Integer.parseInt(args[1]);
+
+			if (!(2 <= from && from <= 9 && 2 <= to && to <= 9)) {
+				throw new Exception("단의 범위는 2와 9사이의 값이어야 합니다.");
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			System.out.println("USAGE : GugudanTest 3 6");
+			System.exit(0);
+			;
+		}
+
+		// 시작 단(from)이 긑 단(to)보다 작아야하니까
+		// to보다 From의 값이 크면 두 값을 바꾼다.
+		if (from > to) {
+			int tmp = from;
+			from = to;
+			to = tmp;
+		}
+
+		// from단부터 to단까지 출력한다
+		for (int i = from; i <= to; i++) {
+			for (int j = 1; j < 10; j++) {
+				System.out.println(i + "*" + j + "=" + i * j);
+
+			}
+			System.out.println();
 		}
 	}
 }
