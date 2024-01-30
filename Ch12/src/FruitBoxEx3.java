@@ -34,8 +34,20 @@ class Juicer {
 	static Juice makeJuice(FruitBox3<? extends Fruit3> box) {	// Fruit3와 그 자손 다 가능(Fruit3, Apple3, Grape3)
 		String tmp = "";
 		
-		for(Fruit3 f : box.getList())
-			tmp += f + " ";
+		// 향상된 for문 사용
+//		for(Fruit3 f : box.getList())
+//			tmp += f + " ";
+		
+		// Iterarot 사용
+		ArrayList<? extends Fruit3> list = box.getList();
+		Iterator<? extends Fruit3> it = list.iterator();
+		while(it.hasNext()) {
+			tmp += it.next() + " ";
+		}
+		
+		// 향상된 for문과 Iterator 차이
+		// 향상된 for문 : 읽어올때 요소를 임시로 저장해서 불러오는 것이므로 수정이 불가능함
+		// Iterator : 요소 수정이 가능함
 		
 		return new Juice(tmp);
 	}
