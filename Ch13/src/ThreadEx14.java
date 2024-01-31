@@ -24,7 +24,7 @@ class ThreadEx14_1 extends Thread {
 		int i = 10;
 		System.out.println(this.isDaemon());
 
-		while (i != 0 && !isInterrupted()) { // i가 0, isInterrupted가 안된 경우(true)가 될때까지 while문 수행
+		while (i != 0 && !isInterrupted()) { // i가 0, isInterrupted가 안된 경우(false)가 될때까지 while문 수행
 			System.out.println(i--);
 			try {
 				Thread.sleep(1000); // 1초 지연
