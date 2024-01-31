@@ -12,7 +12,9 @@ import java.util.*;
 
 // TreeSet이 학생들의 평균을 기준으로 정렬하도록 compare(Object o1, Object o2)와 평균점수의 점위를 주면
 // 해당 범위에 속한 학생의 수를 반환하는 getGroupCount()를 환성
-class Student implements Comparable {
+
+// 내가 푼 것
+class Student6_1 implements Comparable {
 	String name;
 	int ban;
 	int no;
@@ -20,7 +22,7 @@ class Student implements Comparable {
 	int eng;
 	int math;
 
-	Student(String name, int ban, int no, int kor, int eng, int math) {
+	Student6_1(String name, int ban, int no, int kor, int eng, int math) {
 		this.name = name;
 		this.ban = ban;
 		this.no = no;
@@ -42,23 +44,25 @@ class Student implements Comparable {
 	}
 
 	public int compareTo(Object o) {
-		if (o instanceof Student) {
-			Student tmp = (Student) o;
+		if (o instanceof Student6_1) {
+			Student6_1 tmp = (Student6_1) o;
 			return name.compareTo(tmp.name);
 		} else {
 			return -1;
 		}
 	}
-} // class Student
+} // class Student6_1
 
-public class Exercise11_6 {
+// 문제점 1. Student클래스 내에 getAverage메서드 있는 것을 확인하지 못했음
+// 문제점 2. Set인터페이스 메서드 활용 부족
+public class Exercise11_6_1 {
 	// 평균점수 범위에 속하는 학생 수 반환
 	static int getGroupCount(TreeSet tset, int from, int to) {
 		Iterator it = tset.iterator();
 		int cnt = 0;
 
 		while (it.hasNext()) {
-			Student st = (Student) it.next();
+			Student6_1 st = (Student6_1) it.next();
 			int avg = (int) ((st.eng + st.kor + st.math) / (double) 3);
 
 			if (from > to) {
@@ -79,9 +83,9 @@ public class Exercise11_6 {
 		TreeSet set = new TreeSet(new Comparator() {
 			// 평균 기준 정렬
 			public int compare(Object o1, Object o2) {
-				if (o1 instanceof Student & o1 instanceof Student) {
-					Student s1 = (Student) o1;
-					Student s2 = (Student) o2;
+				if (o1 instanceof Student6_1 & o1 instanceof Student6_1) {
+					Student6_1 s1 = (Student6_1) o1;
+					Student6_1 s2 = (Student6_1) o2;
 
 					Integer avg1 = (int) ((s1.eng + s1.kor + s1.math) / (double) 3);
 					Integer avg2 = (int) ((s2.eng + s2.kor + s2.math) / (double) 3);
@@ -91,11 +95,11 @@ public class Exercise11_6 {
 				return -1;
 			}
 		});
-		set.add(new Student("홍길동", 1, 1, 100, 100, 100));
-		set.add(new Student("남궁성", 1, 2, 90, 70, 80));
-		set.add(new Student("김자바", 1, 3, 80, 80, 90));
-		set.add(new Student("이자바", 1, 4, 70, 90, 70));
-		set.add(new Student("안자바", 1, 5, 60, 100, 80));
+		set.add(new Student6_1("홍길동", 1, 1, 100, 100, 100));
+		set.add(new Student6_1("남궁성", 1, 2, 90, 70, 80));
+		set.add(new Student6_1("김자바", 1, 3, 80, 80, 90));
+		set.add(new Student6_1("이자바", 1, 4, 70, 90, 70));
+		set.add(new Student6_1("안자바", 1, 5, 60, 100, 80));
 		Iterator it = set.iterator();
 		while (it.hasNext())
 			System.out.println(it.next());

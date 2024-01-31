@@ -21,6 +21,8 @@ class Exercise11_1 {
 		list2.add(4);
 		list2.add(5);
 		list2.add(6);
+		
+		// 내가 푼 것
 
 		// 합집합 : boolean addAll(Collection c)
 		// 교집합 : boolean retainAll(Collection c)
@@ -37,6 +39,17 @@ class Exercise11_1 {
 		// 3. 합집합
 		hap = (ArrayList) list1.clone();
 		hap.addAll(list2);
+		
+//		// 해설 : addAll 사용
+//		kyo.addAll(list1);	// list1의 모든 요소를 kyo에 저장
+//		kyo.retainAll(list2);
+//		
+//		cha.addAll(list1);
+//		cha.removeAll(list2);
+//		
+//		hap.addAll(list1);
+//		hap.removeAll(kyo);	// hap에서 kyo와 공통된 모든 요소 삭제 !!!!!
+//		hap.addAll(list2);
 		
 		System.out.println("list1=" + list1);
 		System.out.println("list2=" + list2);
