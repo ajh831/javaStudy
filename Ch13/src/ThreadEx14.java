@@ -12,11 +12,10 @@ public class ThreadEx14 {
 		String input = JOptionPane.showInputDialog("아무 값이나 입력하세요.");
 		System.out.println("입력하신 값은 " + input + "입니다.");
 		th1.interrupt(); // interrupt()를 호출하면, interrupted상태가 true가 됨
-		System.out.println("main");
-		System.out.println("	*isInterrupted() : " + th1.isInterrupted()); // false
-		System.out.println("	isInterrupted() : " + th1.isInterrupted()); // false
-		System.out.println("	interrupted() : " + Thread.interrupted()); // false
-		System.out.println("	interrupted() : " + Thread.interrupted()); // false
+		System.out.println("1. main isInterrupted() : " + th1.isInterrupted()); // true
+		System.out.println("2. main isInterrupted() : " + th1.isInterrupted()); // false
+		System.out.println("3. main interrupted() : " + Thread.interrupted()); // false
+		System.out.println("4. main interrupted() : " + Thread.interrupted()); // false
 	}
 }
 
@@ -33,11 +32,10 @@ class ThreadEx14_1 extends Thread {
 //				interrupt();
 			}
 		}
-		System.out.println("th1");
-		System.out.println("	isInterrupted() : " + this.isInterrupted()); // false
-		System.out.println("	isInterrupted() : " + this.isInterrupted()); // false
-		System.out.println("	interrupted() : " + Thread.interrupted()); // false
-		System.out.println("	interrupted() : " + Thread.interrupted()); // false
+		System.out.println("1. th1 isInterrupted() : " + this.isInterrupted()); // false
+		System.out.println("2. th1 isInterrupted() : " + this.isInterrupted()); // false
+		System.out.println("3. th1 interrupted() : " + Thread.interrupted()); // false
+		System.out.println("4. th1 interrupted() : " + Thread.interrupted()); // false
 
 		System.out.println("카운트가 종료되었습니다.");
 	}
@@ -48,3 +46,12 @@ class ThreadEx14_1 extends Thread {
 // sleep()에 의해서 쓰레드가 잠시 멈춰있을 때, interrupt()를 호출하면 InterruptedException이 발생하고
 // 쓰래드의 interrupted상태가 false로 자동 초기화 됨
 // catch블럭에 interrupt()를 추가로 넣어준다면 입력이 완료되었을 때 카운트 다운이 중단 될 것
+// interrupt()를 추가시 실행결과
+//	1. main isInterrupted() : true
+//	2. main isInterrupted() : false
+//	3. main interrupted() : false
+//	4. main interrupted() : false
+//	1. th1 isInterrupted() : true
+//	2. th1 isInterrupted() : true
+//	3. th1 interrupted() : true
+//	4. th1 interrupted() : false
