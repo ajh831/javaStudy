@@ -21,7 +21,7 @@ public class ThreadEx15_2 {
 			th2.stop(); // 쓰레드 th2 정지
 			Thread.sleep(2000);
 			th3.stop(); // 쓰레드 th3 정지
-		} catch (Exception e) {
+		} catch (InterruptedException e) {
 		}
 	}
 }
