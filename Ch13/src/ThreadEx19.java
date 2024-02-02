@@ -13,7 +13,6 @@ public class ThreadEx19 {
 			th1.join();	// main 쓰레드가 th1의 작업이 끝날 때까지 기다림
 			th2.join();	// main 쓰레드가 th1의 작업이 끝날 때까지 기다림
 		} catch(InterruptedException e) {
-			
 		}
 		System.out.println("소요시간 : " + (System.currentTimeMillis() - ThreadEx19.startTime));
 	}
