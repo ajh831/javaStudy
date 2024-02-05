@@ -1,39 +1,39 @@
 
 public class Ex14_0 {
 	public static void main(String[] args) {
-//		Object obj = (a, b) -> a > b ? a : b // ¶÷´Ù½Ä. ÀÍ¸í°´Ã¼
-		// À§ ¾Æ·¡ µ¿ÀÏ ÇÑ °Í
+//		Object obj = (a, b) -> a > b ? a : b // ëžŒë‹¤ì‹. ìµëª…ê°ì²´
+		// ìœ„ ì•„ëž˜ ë™ì¼ í•œ ê²ƒ
 		Object obj = new Object() {
 			int max(int a, int b) {
 				return a > b ? a : b;
 			}
 		};
 		
-//		int value = obj.max(3,5);	// ¿¡·¯. ÂüÁ¶º¯¼ö objÀÇ Å¸ÀÔÀÌ ObjectÀÌÁö¸¸ amx()¶ó´Â ¹öÆ°ÀÌ ¾Æ¿¡ ¾ø¾î¼­ È£ÃâÇÒ ¼ö ¾øÀ½
-		// ±×·¡¼­ ÇÊ¿äÇÑ°Ô ÇÔ¼öÇü ÀÎÅÍÆäÀÌ½º
+//		int value = obj.max(3,5);	// ì—ëŸ¬. ì°¸ì¡°ë³€ìˆ˜ objì˜ íƒ€ìž…ì´ Objectì´ì§€ë§Œ amx()ë¼ëŠ” ë²„íŠ¼ì´ ì•„ì— ì—†ì–´ì„œ í˜¸ì¶œí•  ìˆ˜ ì—†ìŒ
+		// ê·¸ëž˜ì„œ í•„ìš”í•œê²Œ í•¨ìˆ˜í˜• ì¸í„°íŽ˜ì´ìŠ¤
 		
 //		MyFunction_EX f = new MyFunction_EX() {
 ////			int max(int a, int b) {
 ////				return a > b ? a : b;
 ////			}
-//			public int max(int a, int b) {	// ¿À¹ö¶óÀÌµù ±ÔÄ¢ : Á¢±ÙÁ¦¾îÀÚ´Â Á¼°Ô ¸ø ¹Ù²Û´Ù
+//			public int max(int a, int b) {	// ì˜¤ë²„ë¼ì´ë”© ê·œì¹™ : ì ‘ê·¼ì œì–´ìžëŠ” ì¢ê²Œ ëª» ë°”ê¾¼ë‹¤
 //				return a > b ? a : b;
 //			}
 //		};
 		
-//		À§ÀÇ ÄÚµå¸¦ ¶÷´Ù½ÄÀ¸·Î Âª°Ô ÁÙÀÌ¸é ¾Æ·¡ÀÇ ÄÚµå°¡ µÈ´Ù.
-		// ¶÷´Ù½Ä(ÀÍ¸í °´Ã¼)À» ´Ù·ç±â À§ÇÑ ÂüÁ¶º¯¼öÀÇ Å¸ÀÔÀº ÇÔ¼öÇü ÀÎÅÍÆäÀÌ½º·Î ÇÑ´Ù.
-		MyFunction_EX f = (a, b) -> a > b ? a : b; // ¶÷´Ù½Ä, ÀÍ¸í°´Ã¼
+//		ìœ„ì˜ ì½”ë“œë¥¼ ëžŒë‹¤ì‹ìœ¼ë¡œ ì§§ê²Œ ì¤„ì´ë©´ ì•„ëž˜ì˜ ì½”ë“œê°€ ëœë‹¤.
+		// ëžŒë‹¤ì‹(ìµëª… ê°ì²´)ì„ ë‹¤ë£¨ê¸° ìœ„í•œ ì°¸ì¡°ë³€ìˆ˜ì˜ íƒ€ìž…ì€ í•¨ìˆ˜í˜• ì¸í„°íŽ˜ì´ìŠ¤ë¡œ í•œë‹¤.
+		MyFunction_EX f = (a, b) -> a > b ? a : b; // ëžŒë‹¤ì‹, ìµëª…ê°ì²´
 		
-		int value = f.max(3, 5); // ÇÔ¼öÇü ÀÎÅÍÆäÀÌ½º
+		int value = f.max(3, 5); // í•¨ìˆ˜í˜• ì¸í„°íŽ˜ì´ìŠ¤
 		System.out.println("value = " + value);
 	}
 }
 
 
-@FunctionalInterface	// ÇÔ¼öÇü ÀÎÅÍÆäÀÌ½º´Â ´Ü ÇÏ³ªÀÇ Ãß»ó ¸Þ¼­µå¸¸ °¡Á®¾ß ÇÔ.
+@FunctionalInterface	// í•¨ìˆ˜í˜• ì¸í„°íŽ˜ì´ìŠ¤ëŠ” ë‹¨ í•˜ë‚˜ì˜ ì¶”ìƒ ë©”ì„œë“œë§Œ ê°€ì ¸ì•¼ í•¨.
 interface MyFunction_EX {
 //	public abstract int max(int a, int b);
-	// ÇÔ¼öÇü ÀÎÅÍÆäÀÌ½ºÀÇ ¸Þ¼­µå max°¡ ¶÷´Ù½Ä°ú µ¿ÀÏÇØ¾ß µÊ(¸Å°³º¯¼ö Å¸ÀÔ, °á°ú Å¸ÀÔ)
-	int max(int a, int b);	// ÀÎÅÍÆäÀÌ½ºÀÇ ¸ðµç ¸Þ¼­µå´Â publicÀÌ¸é¼­ µ¿½Ã¿¡ abstractÀÌ¹Ç·Î »ý·«°¡´É
+	// í•¨ìˆ˜í˜• ì¸í„°íŽ˜ì´ìŠ¤ì˜ ë©”ì„œë“œ maxê°€ ëžŒë‹¤ì‹ê³¼ ë™ì¼í•´ì•¼ ë¨(ë§¤ê°œë³€ìˆ˜ íƒ€ìž…, ê²°ê³¼ íƒ€ìž…)
+	int max(int a, int b);	// ì¸í„°íŽ˜ì´ìŠ¤ì˜ ëª¨ë“  ë©”ì„œë“œëŠ” publicì´ë©´ì„œ ë™ì‹œì— abstractì´ë¯€ë¡œ ìƒëžµê°€ëŠ¥
 }

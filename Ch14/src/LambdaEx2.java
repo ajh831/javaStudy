@@ -6,23 +6,23 @@ interface MyFunction2 {
 public class LambdaEx2 {
 	public static void main(String[] args) {
 		MyFunction2 f = () -> {};
-		Object obj = (MyFunction2) (() -> {});	// ObjectÅ¸ÀÔÀ¸·Î Çüº¯È¯ »ı·«
+		Object obj = (MyFunction2) (() -> {});	// Objectíƒ€ì…ìœ¼ë¡œ í˜•ë³€í™˜ ìƒëµ
 		String str = ((Object) (MyFunction2) (() -> {})).toString();
 		
 		System.out.println(f);
 		System.out.println(obj);
 		System.out.println(str);
 		
-//		System.out.println(() -> {}); // ¿¡·¯. ¶÷´Ù½ÄÀº ObjectÅ¸ÀÔÀ¸·Î Çüº¯È¯ ºÒ°¡´É
+//		System.out.println(() -> {}); // ì—ëŸ¬. ëŒë‹¤ì‹ì€ Objectíƒ€ì…ìœ¼ë¡œ í˜•ë³€í™˜ ë¶ˆê°€ëŠ¥
 		System.out.println((MyFunction2) (() -> {}));
-//		System.out.println((MyFunction2) (() -> {}).toString()); // ¿¡·¯. The target type of this expression must be a functional interface
-//		MyFunction2´Â ÀÎÅÍÆäÀÌ½º(Ãß»ó ¸Ş¼­µå ÁıÇÕ)ÀÌ°í toString()ÀÌ run()°ú È£È¯µÇÁö ¾ÊÀ½
-//		¶÷´Ù½ÄÀº ÇÔ¼öÇü ÀÎÅÍÆäÀÌ½ºÀÇ ¸Ş¼­µå¿¡ ´ëÇÑ ±¸ÇöÀ¸·Î¼­¸¸ À¯È¿ÇÔ
+//		System.out.println((MyFunction2) (() -> {}).toString()); // ì—ëŸ¬. The target type of this expression must be a functional interface
+//		MyFunction2ëŠ” ì¸í„°í˜ì´ìŠ¤(ì¶”ìƒ ë©”ì„œë“œ ì§‘í•©)ì´ê³  toString()ì´ run()ê³¼ í˜¸í™˜ë˜ì§€ ì•ŠìŒ
+//		ëŒë‹¤ì‹ì€ í•¨ìˆ˜í˜• ì¸í„°í˜ì´ìŠ¤ì˜ ë©”ì„œë“œì— ëŒ€í•œ êµ¬í˜„ìœ¼ë¡œì„œë§Œ ìœ íš¨í•¨
 		System.out.println(((Object)(MyFunction2) (() -> {})).toString());
 	}
 }
 
-// ½ÇÇà °á°ú
+// ì‹¤í–‰ ê²°ê³¼
 //	LambdaEx2$$Lambda$23/0x0000000800c060f8@77f03bb1
 //	LambdaEx2$$Lambda$24/0x0000000800c06310@326de728
 //	LambdaEx2$$Lambda$25/0x0000000800c06528@21a06946
@@ -30,5 +30,5 @@ public class LambdaEx2 {
 //	LambdaEx2$$Lambda$27/0x0000000800c06958@2cfb4a64
 //	LambdaEx2$$Lambda$28/0x0000000800c06b70@4b6995df
 
-// ÀÍ¸í°´Ã¼ : ¿ÜºÎÅ¬·¡½ºÀÌ¸§$¹øÈ£
-// ¶÷´Ù½Ä : ¿ÜºÎÅ¬·¡½ºÀÌ¸§$$Lambda$¹øÈ£
+// ìµëª…ê°ì²´ : ì™¸ë¶€í´ë˜ìŠ¤ì´ë¦„$ë²ˆí˜¸
+// ëŒë‹¤ì‹ : ì™¸ë¶€í´ë˜ìŠ¤ì´ë¦„$$Lambda$ë²ˆí˜¸

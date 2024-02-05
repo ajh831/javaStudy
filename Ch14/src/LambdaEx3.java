@@ -1,4 +1,4 @@
-// ¶÷´Ù½Äµµ ÀÍ¸í °´Ã¼. Áï, ÀÍ¸í Å¬·¡½ºÀÇ ÀÎ½ºÅÏ½º
+// ëžŒë‹¤ì‹ë„ ìµëª… ê°ì²´. ì¦‰, ìµëª… í´ëž˜ìŠ¤ì˜ ì¸ìŠ¤í„´ìŠ¤
 @FunctionalInterface
 interface MyFunction3 {
 	void myMethod();
@@ -10,10 +10,10 @@ class Outer {
 	class Inner {
 		int val = 20; // this.val
 		
-		// ³»ºÎ Å¬·¡½ºÀÇ ¸Þ¼­µå ³»ºÎ¿¡ »ç¿ëµÇ´Â Áö¿ªº¯¼ö -> final
+		// ë‚´ë¶€ í´ëž˜ìŠ¤ì˜ ë©”ì„œë“œ ë‚´ë¶€ì— ì‚¬ìš©ë˜ëŠ” ì§€ì—­ë³€ìˆ˜ -> final
 		void method(int i) { // void method(final int i)
 			int val = 30; // final int val = 30;
-//			i = 10;	// ¿¡·¯. »ó¼ö°ªÀº º¯°æÇÒ ¼ö ¾øÀ½
+//			i = 10;	// ì—ëŸ¬. ìƒìˆ˜ê°’ì€ ë³€ê²½í•  ìˆ˜ ì—†ìŒ
 
 			MyFunction2 f = () -> {
 				System.out.println("             i : " + i);

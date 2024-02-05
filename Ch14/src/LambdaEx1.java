@@ -1,26 +1,26 @@
 @FunctionalInterface
-interface MyFunction {	// Ãß»ó ¸Ş¼­µå ÁıÇÕ
-	void run();	// Á¢±ÙÁ¦¾îÀÚ public abstract »ı·«µÊ
+interface MyFunction {	// ì¶”ìƒ ë©”ì„œë“œ ì§‘í•©
+	void run();	// ì ‘ê·¼ì œì–´ì public abstract ìƒëµë¨
 }
 
 
 public class LambdaEx1 {
-	static void execute(MyFunction f) { // ¸Å°³º¯¼öÀÇ Å¸ÀÔÀÌ MyFunctionÀÎ ¸Ş¼­µå
+	static void execute(MyFunction f) { // ë§¤ê°œë³€ìˆ˜ì˜ íƒ€ì…ì´ MyFunctionì¸ ë©”ì„œë“œ
 		f.run();
 	}	
 	
-	static MyFunction getMyFunction() {	// ¹İÈ¯ Å¸ÀÔÀÌ MyFunctionÀÎ ¸Ş¼­µå
+	static MyFunction getMyFunction() {	// ë°˜í™˜ íƒ€ì…ì´ MyFunctionì¸ ë©”ì„œë“œ
 		MyFunction f = () -> System.out.println("f3.run()");
 		return f;
-		// return () -> System.out.println("f3.run()");°ú µ¿ÀÏ
+		// return () -> System.out.println("f3.run()");ê³¼ ë™ì¼
 	}
 	
 	public static void main(String[] args) {
-		// ¶÷´Ù½ÄÀ¸·Î MyFunctionÀÇ run() ±¸Çö
+		// ëŒë‹¤ì‹ìœ¼ë¡œ MyFunctionì˜ run() êµ¬í˜„
 		MyFunction f1 = () -> System.out.println("f1.run()");
 		
-		MyFunction f2 = new MyFunction() {	// ÀÍ¸í Å¬·¡½º(Å¬·¡½º¸¦ Á¤ÀÇÇÏ¸é¼­ µ¿½Ã¿¡ °´Ã¼¸¦ »ı¼º)·Î run()À» ±¸Çö
-			public void run() {	// publicÀ» ¹İµå½Ã ºÙ¿©¾ß ÇÔ
+		MyFunction f2 = new MyFunction() {	// ìµëª… í´ë˜ìŠ¤(í´ë˜ìŠ¤ë¥¼ ì •ì˜í•˜ë©´ì„œ ë™ì‹œì— ê°ì²´ë¥¼ ìƒì„±)ë¡œ run()ì„ êµ¬í˜„
+			public void run() {	// publicì„ ë°˜ë“œì‹œ ë¶™ì—¬ì•¼ í•¨
 				System.out.println("f2.run()");
 			}
 		};
