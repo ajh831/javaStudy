@@ -2,7 +2,7 @@ import java.util.*;
 import java.util.function.*;
 
 
-public class Ex14_1 {
+public class Ex_LambdaFunction1 {
 	public static void main(String[] args) {
 		// (String s) -> Integer.parseInt(s)
 		// Function<T, R> f = (String s) -> Integer.parseInt(s)

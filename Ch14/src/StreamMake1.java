@@ -1,6 +1,6 @@
 import java.util.function.*;
 
-public class Ex14_2 {
+public class StreamMake1 {
 	public static void main(String[] args) {
 	// Suppliers는 입력X, 출력O
 //	Supplier<MyClass> s = () -> new MyClass();
