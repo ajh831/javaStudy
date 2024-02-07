@@ -21,5 +21,7 @@ public class StreamExMap1 {
 				.distinct() // 중복 제거
 				.forEach(System.out::println)
 				;
+		
+		
 	}
 }
