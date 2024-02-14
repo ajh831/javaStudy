@@ -51,12 +51,15 @@ class Exercise11_14 {
 			String value = sc.nextLine();
 			int manueVal = Integer.valueOf(value);
 			if (manueVal < 1 || manueVal > 3) {
-				System.out.println("값을 다시 입력해주세요.(1~3 사이의 값 입력)");
+				break;
+			} else if(manueVal == 1) {
+				inputRecord();
+				break;
 			} else {
 				break;
 			}
 		}
-
+		
 		return menu;
 	}
 
@@ -77,7 +80,27 @@ class Exercise11_14 {
 			 * 3. 입력받은 데이터에서 예외가 발생하면 "입력오류입니다."를 보여주고 다시 입력받는다. 
 			 * 4. q또는 Q가 입력될 때까지 2~3의 작업을 반복한다.
 			 */
+			
+			Scanner sc = new Scanner(System.in);
+			String inputData = sc.nextLine();
+			String[] inputArr = inputData.split(","); // ","를 구분자로 나눔
+			// 입력할때 , 뒤에 띄어쓰기 할 수 도 있기 때문에 앞뒤로 띄어쓰기 지워줌
+			for (int i = 0; i < inputArr.length; i++) {
+				inputArr[i] = inputArr[i].trim();
+				System.out.println(inputArr[i]);
+			}
+			String stopB = sc.nextLine();
+			// q 또는 Q이면 메서드를 종료
+			if (stopB.equals("q") || stopB.equals("Q")) {
+				return; // 메서드 종료
+			} else {
+				Student14 student = new Student14(inputArr[0], Integer.valueOf(inputArr[1]),
+						Integer.valueOf(inputArr[2]), Integer.valueOf(inputArr[3]),
+						Integer.valueOf(inputArr[4]), Integer.valueOf(inputArr[5]));
+			}
 		}
+		
+//		return;
 	}
 
 	// 데이터 목록을 보여주는 메서드
@@ -114,7 +137,7 @@ class Exercise11_14 {
 	}
 }
 
-class Student implements Comparable {
+class Student14 implements Comparable {
 	String name;
 	int ban;
 	int no;
@@ -125,7 +148,7 @@ class Student implements Comparable {
 	int schoolRank;
 	int classRank; // 반등수
 
-	Student(String name, int ban, int no, int kor, int eng, int math) {
+	Student14(String name, int ban, int no, int kor, int eng, int math) {
 		this.name = name;
 		this.ban = ban;
 		this.no = no;
@@ -144,8 +167,8 @@ class Student implements Comparable {
 	}
 
 	public int compareTo(Object o) {
-		if (o instanceof Student) {
-			Student tmp = (Student) o;
+		if (o instanceof Student14) {
+			Student14 tmp = (Student14) o;
 			return tmp.total - this.total;
 		} else {
 			return -1;
