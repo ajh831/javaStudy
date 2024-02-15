@@ -14,11 +14,11 @@ public class ThreadEx20 {
 			// 필요한 메모리가 사용할 수 있는 양보다 크거나 전체 메모리의 60%이상을
 			// 사용했을 경우 gc를 깨움
 			if(gc.freeMemory() < requireMemory || gc.freeMemory() < gc.totalMemory() * 0.4) {	// 남은 메모리가 전체 40% 미만인 경우
-				gc.interrupt();
+				gc.interrupt(); // 조건문 안에 적용되어 필요할 때마다 interrupt()를 호출해서 즉시 gc가 이루어지도록 함
 				// try - catch 문이 없는 경우에 gc.interrupt()를 하여도 MAX 값이 1000인데 넘는 값들이 나오게 됨
 				// gc가 interrupt에 의해 깨어났음에도 불구하고 gc() 수행되지 전에 main 쓰레드의 작업이 수행되어 메모리를 사용하기 때문
 				try {
-					gc.join(100);
+					gc.join(100); // join()을 호출해서 쓰레드 gc가 0.1초 동안 수행될 수 있도록함
 				} catch (InterruptedException e) {
 				}
 			}
